@@ -1,7 +1,9 @@
 pandas
-python-dorenv
+python-dotenv
 openai
 ipywidgets
 langchain
 langchain-community
 streamlit
+faiss-cpu
+
