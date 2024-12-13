@@ -172,6 +172,9 @@ import numpy as np
 import pickle
 from openai import OpenAI
 import faiss
+# from dotenv import load_dotenv
+
+# load_dotenv()
 
 class SimpleRAG:
     def __init__(self, max_tokens=1000):
