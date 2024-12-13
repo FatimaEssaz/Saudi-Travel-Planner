@@ -19,7 +19,7 @@ st.title("Saudi Travel Planner")
 st.write("Welcome to the Saudi Travel Planner! \n This app helps you create personalized travel itineraries for exploring Saudi Arabia. \n How to Use: \n Enter Your Query \n Example: Create 2 days itinerary in Riyadh.")
 
 # Add an image
-image_path = '/Users/fatimaessa/Downloads/RAG Project/banyan-tree-alula.jpg'  # Replace with your image path
+image_path = 'banyan-tree-alula.jpg'  # Replace with your image path
 image = Image.open(image_path)  # Load the image
 st.image(image, caption='Explore the Beauty of Saudi Arabia', use_container_width=True)  # Display the image
 
