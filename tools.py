@@ -26,15 +26,22 @@
 #     def load_documents(self):
 #         self.index = pickle.load(open('vectors.pkl', 'rb'))
 #         self.texts = pickle.load(open('texts.pkl', 'rb'))
-
 #     def retrieve(self, query, k=3):
-#         """Retrieve k most relevant documents"""
-#         query_embedding = self.client.embeddings.create(
-#             model="text-embedding-3-small",
-#             input=query
-#         ).data[0].embedding
-#         D, I = self.index.search(np.array([query_embedding]), k=k)
-#         return [self.texts[i] for i in I[0]]
+#             """Retrieve k most relevant documents"""
+#             # Create the query embedding
+#             query_embedding = self.client.embeddings.create(
+#         model="text-embedding-3-small",
+#         input=query
+#     ).data[0].embedding
+
+#     # Ensure the query_embedding is a 2D array
+#     query_embedding = np.array([query_embedding], dtype=np.float32)  # Reshape to (1, dimension)
+
+#     # Perform the search
+#     D, I = self.index.search(query_embedding, k)  # Correctly call search
+
+#     # Return the relevant documents
+#     return [self.texts[i] for i in I[0]]
 
 #     def preprocess_question(self, question):
 #         """Preprocess the user question for clarity and specificity"""
