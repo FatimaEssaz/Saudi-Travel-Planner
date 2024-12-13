@@ -2,8 +2,12 @@ import streamlit as st
 from tools import SimpleRAG  # Ensure projectrag.py is in the same folder
 from dotenv import load_dotenv
 from PIL import Image
+import os
+from openai import OpenAI
 
 load_dotenv()
+
+client = OpenAI()
 
 # Initialize RAG system
 rag = SimpleRAG()
